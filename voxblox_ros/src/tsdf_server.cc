@@ -646,7 +646,7 @@ void TsdfServer::tsdfMapCallback(const voxblox_msgs::Layer& layer_msg) {
     ROS_ERROR_THROTTLE(10, "Got an invalid TSDF map message!");
   } else {
     ROS_INFO_ONCE("Got an TSDF map from ROS topic!");
-    if (publish_pointclouds_on_update_) {
+    if (publish_pointclouds_ && publish_pointclouds_on_update_) {
       publishPointclouds();
     }
   }
